@@ -16,9 +16,15 @@ export default function Home() {
 
   return (
     <div css={{
-      padding: 6
+      fontFamily: 'sans',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '100vh',
     }}>
-      <PropertyCard property={property}/>
+      <div css={{ width: 400 }}>
+        <PropertyCard property={property}/>
+      </div>
     </div>
   )
 }

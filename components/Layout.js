@@ -11,7 +11,8 @@ export default function Layout({ children }) {
       <Global
         styles={{
           'html': {
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
+            lineHeight: '1.5',
           },
           'body': {
             margin: 0,
@@ -25,6 +26,10 @@ export default function Layout({ children }) {
               boxSizing: 'inherit',
             },
           },
+          'h1, h2, h3, h4, h5, h6': {
+            fontSize: 'inherit',
+            margin: 0,
+          }
         }}
       />
       {children}

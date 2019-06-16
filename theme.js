@@ -7,15 +7,18 @@ const resolvedTheme = resolveConfig(defaultConfig).theme
 
 const tailwindSystemUi = {
   fonts: fromPairs(map(toPairs(resolvedTheme.fontFamily), ([ name, fonts ]) => [name, fonts.join(', ')])),
-  fontSizes: values(resolvedTheme.fontSize),
-  fontWeights: values(resolvedTheme.fontWeight),
+  fontSizes: resolvedTheme.fontSize,
+  fontWeights: resolvedTheme.fontWeight,
   colors: fromPairs(map(toPairs(resolvedTheme.colors), ([name, colors]) => {
     return [
       name,
-      Array.isArray(colors) ? values(colors) : colors,
+      colors,
     ]
   })),
-  space: values(resolvedTheme.spacing),
+  space: resolvedTheme.spacing,
+  sizes: resolvedTheme.spacing,
+  shadows: resolvedTheme.boxShadow,
+  radii: resolvedTheme.borderRadius,
 }
 
 console.log(tailwindSystemUi)
